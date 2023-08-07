@@ -1,6 +1,11 @@
 <?php
 	include_once "./config.php";
     include_once "./db_con.php";
+
+    if (isset($_GET["page"]))
+		$page = $_GET["page"];
+	else
+		$page = 1;
 ?>
 <!DOCTYPE html>
 <html>
@@ -86,7 +91,7 @@
                         }
                     }
                     ?>
-
+<!--게시판 목록 가져오기-->
 <tbody>
 			      	<tr>
 			          <td width="70"><?=$board['idx']; ?></td>
