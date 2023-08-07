@@ -107,7 +107,21 @@
                 </table>
                 </div>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function (){
+    var readCheckElements = document.querySelectorAll(".read_check");
 
+    readCheckElements.forEach(function (element) {
+      element.addEventListener("click", function () {
+        var action_url = element.getAttribute("data-action");
+        console.log(action_url);
+
+        window.location.href = action_url;
+      });
+    });
+  });
+</script>
+	    
 </body>
 </html>
 
