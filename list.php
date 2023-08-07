@@ -80,7 +80,7 @@
 			    </tr>
 
                 <?php
-                $sql2=qe("select * from board order by idx desc");
+                $sql2=qe("select * from board order by num desc");
                     while($board=$sql2->fetch_array())
                     {
                         $title=$board["title"];
@@ -94,10 +94,10 @@
 <!--게시판 목록 가져오기-->
 <tbody>
 			      	<tr>
-			          <td width="70"><?=$board['idx']; ?></td>
+			          <td width="70"><?=$board['num']; ?></td>
 			          <td width="500">
                         <span class="read_check" style="cursor:pointer"
-                        data-action="./read.php?idx=<?=$board['num']?>" ><?
+                        data-action="./read.php?num=<?=$board['num']?>" ><?
                         =$title?></span>
                             <td width="120"><?=$board['name'];?></td>
 			                <td width="100"><?=$board['date'];?></td>
