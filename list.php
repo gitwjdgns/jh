@@ -107,6 +107,22 @@
                 </table>
                 </div>
 
+<div id="write_btn">
+	<a href="write.php"><button class="btn btn-primary pull-right">글쓰기</button></a>
+</div>
+	    <br><br><br>
+	    <div id="search_box" style="text-align: center;">
+		    <form action="search_result.php" method="get">
+			    <select name="category">
+				    <option value="title">제목</option>
+				    <option value="name">작성자</option>
+				    <option value="content">내용</option>
+			    </select>
+			    <input type="text" name="search" size="40" required="required">
+			    <button class="btn btn-primary">검색</button>
+		    </form>
+	    </div>
+	    
 <script>
   document.addEventListener("DOMContentLoaded", function (){
     var readCheckElements = document.querySelectorAll(".read_check");
