@@ -86,7 +86,7 @@
 <div class="col-lg-4"></div>
 <div class="form-group">
     <input type="text" class="form-control" placeholder="ID" name="id" id="id" maxlength="15" onblur="checkId()">
-    <button type="button" class="btn btn-primary" onclick="checkDup()">중복체크</button>
+    //<button type="button" class="btn btn-primary" onclick="checkDup()">중복체크</button>
     <div id="idMessage" style="color: red;"></div>
 </div>
 
@@ -132,44 +132,44 @@
         }
     }
 
-    function checkDup()
-    {
-        var id= document.getElementById('id').value;
+    // function checkDup()
+    // {
+    //     var id= document.getElementById('id').value;
 
-        var xhr= new XMLHttpRequest();
+    //     var xhr= new XMLHttpRequest();
 
-        xhr.open("POST", "./check_dup.php", true);
+    //     xhr.open("POST", "./check_dup.php", true);
 
-        var params= "id="+encodeURI(id);
+    //     var params= "id="+encodeURI(id);
 
-        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    //     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         
-        xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            var data = JSON.parse(xhr.responseText);
+    //     xhr.onreadystatechange = function () {
+    //     if (xhr.readyState == 4 && xhr.status == 200) {
+    //         var data = JSON.parse(xhr.responseText);
 
-            if (data.data_check===1) {
-                document.getElementById('idMessage').innerHTML = "사용 가능한 아이디입니다.";
-                document.getElementById('idMessage').style.color = "blue";
-                //document.getElementById('idMessage').setAttribute("data-check", "1");
+    //         if (data.data_check===1) {
+    //             document.getElementById('idMessage').innerHTML = "사용 가능한 아이디입니다.";
+    //             document.getElementById('idMessage').style.color = "blue";
+    //             //document.getElementById('idMessage').setAttribute("data-check", "1");
 
-            } else if(data.data_check===0){
-                document.getElementById('idMessage').innerHTML = "중복된 아이디입니다.";
-                document.getElementById('idMessage').style.color = "red";
-                //document.getElementById('idMessage').setAttribute("data-check", "0");
-                document.getElementById('id').focus();
-            }
-            else
-            {
-                document.getElementById('idMessage').innerHTML = "오류가 발생했습니다.";
-                document.getElementById('idMessage').style.color = "red";
-                //document.getElementById('idMessage').setAttribute("data-check", "0");
-            }
-        }
-    };
+    //         } else if(data.data_check===0){
+    //             document.getElementById('idMessage').innerHTML = "중복된 아이디입니다.";
+    //             document.getElementById('idMessage').style.color = "red";
+    //             //document.getElementById('idMessage').setAttribute("data-check", "0");
+    //             document.getElementById('id').focus();
+    //         }
+    //         else
+    //         {
+    //             document.getElementById('idMessage').innerHTML = "오류가 발생했습니다.";
+    //             document.getElementById('idMessage').style.color = "red";
+    //             //document.getElementById('idMessage').setAttribute("data-check", "0");
+    //         }
+    //     }
+    // };
 
-    xhr.send(params);
-    }
+    // xhr.send(params);
+    // }
 
 </script>
 </body>
